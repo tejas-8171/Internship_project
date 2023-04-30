@@ -14,13 +14,15 @@ function Home() {
 
   const loadUser = async () => {
     const result = await axios.get(
-      "https://jsonplaceholder.typicode.com/users"
+      "http://localhost:3001/users"
+      
     );
+   
     setUsers(result.data);
   };
 
   const deleteUser = async id => {
-    await axios.delete(`https://jsonplaceholder.typicode.com/users`);
+    await axios.delete(`http://localhost:3001/users/${id}`);
     loadUser();
   }
 

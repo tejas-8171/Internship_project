@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import {  useParams, Link } from "react-router-dom";
 
 
 function View() {
@@ -20,7 +20,7 @@ function View() {
       }, []);
 
     const loadUser = async () => {
-        const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+        const res = await axios.get(`http://localhost:3001/user/${id}`);
         setUser(res.data);
     };
 

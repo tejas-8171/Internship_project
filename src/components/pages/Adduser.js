@@ -19,7 +19,7 @@ function Adduser() {
 
     const onSubmit = async e => {
         e.preventDefault();
-        await axios.post("https://jsonplaceholder.typicode.com/users", user);
+        await axios.post("http://localhost:3001/users", user);
         navigate("/");
     }
 

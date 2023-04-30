@@ -24,15 +24,15 @@ function Edituser() {
     loadUser();
   }, []);
 
-  const onSubmit = async (e) => {
+  const onSubmit = async e => {
     e.preventDefault();
-    await axios.post("https://jsonplaceholder.typicode.com/users/${id}", user);
+    await axios.post(`http://localhost:3001/users/${id}`, user);
     navigate("/");
   };
 
   const loadUser = async () => {
     const result = await axios.get(
-      "https://jsonplaceholder.typicode.com/users/${id}"
+      `http://localhost:3001/users/${id}`
     );
     setUser(result.data);
   };
